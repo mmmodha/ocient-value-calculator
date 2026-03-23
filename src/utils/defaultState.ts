@@ -1,0 +1,71 @@
+import type { AppState } from '../types';
+
+export const defaultState: AppState = {
+  customerName: 'ACME CO',
+  accountDirector: '',
+  solutionsArchitect: '',
+  currency: 'GBP',
+  workingDaysPerYear: 252,
+  workingHoursPerDay: 8,
+  staffTypes: [
+    { id: 'de', active: true, name: 'Data Engineer', salary: 50000, count: 30, yoyIncrease: 0.01, queryDependentPct: 0.8 },
+    { id: 'bi', active: true, name: 'BI Analyst', salary: 80000, count: 15, yoyIncrease: 0.03, queryDependentPct: 0.7 },
+    { id: 'noc', active: true, name: 'NOC Analyst', salary: 100000, count: 10, yoyIncrease: 0.02, queryDependentPct: 0.6 },
+  ],
+  systemCosts: [
+    { id: 'infra', active: true, name: 'Infrastructure Costs', cost: 600000, yoyIncrease: 0, replacedByOcient: true },
+    { id: 'license', active: false, name: 'Software Licenses', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'support', active: true, name: 'Support Costs', cost: 80000, yoyIncrease: 0, replacedByOcient: true },
+    { id: 'cloud1', active: false, name: 'Cloud Service 1', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'cloud2', active: false, name: 'Cloud Service 2', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'cloud3', active: false, name: 'Cloud Service 3', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'app1', active: false, name: 'Custom Application 1', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'app2', active: false, name: 'Custom Application 2', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+    { id: 'app3', active: false, name: 'Custom Application 3', cost: 0, yoyIncrease: 0, replacedByOcient: false },
+  ],
+  slaBreaches: [
+    {
+      id: 'sla1',
+      active: true,
+      title: 'Uptime SLA',
+      type: 'hourly',
+      penaltyPerHour: 5000,
+      uptimeExpected: 0.999999990,
+      uptimeObserved: 0.998,
+      penaltyPerIncident: 0,
+      numberOfIncidents: 0,
+    },
+    {
+      id: 'sla2',
+      active: true,
+      title: 'Incident SLA',
+      type: 'incident',
+      penaltyPerHour: 0,
+      uptimeExpected: 1,
+      uptimeObserved: 1,
+      penaltyPerIncident: 50000,
+      numberOfIncidents: 10,
+    },
+  ],
+  requestsPerYear: 150,
+  personaUseCases: [
+    { staffTypeId: 'de', leadTimeMinutes: 2400, cycleTimeMinutes: 300, staffPerRequest: 3 },
+    { staffTypeId: 'bi', leadTimeMinutes: 3840, cycleTimeMinutes: 240, staffPerRequest: 2 },
+    { staffTypeId: 'noc', leadTimeMinutes: 3360, cycleTimeMinutes: 180, staffPerRequest: 1 },
+  ],
+  ocientPricing: {
+    year1: 2000000,
+    year2: 1500000,
+    year3: 1500000,
+    year4: 1500000,
+    year5: 1500000,
+  },
+  efficiency: {
+    year1: 40,
+    year2: 30,
+    year3: 22,
+    year4: 16,
+    year5: 12,
+  },
+  staffReductionDecisions: {}, // User can override recommended headcount per role per year
+};
