@@ -234,5 +234,3 @@ MIT License - See LICENSE file for details
 This tool is designed for internal Ocient account team use. For feature requests or bug reports, please open an issue.
 
 ---
-
-**Built with ❤️ for the Ocient Solutions Architecture team**
